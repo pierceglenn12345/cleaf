@@ -1,4 +1,9 @@
+;;;; time-value.lisp
+
+(in-package #:trading-core)
+
 (declaim (optimize (speed 0) (safety 3)))
+
 
 (defun intr (infl rtrn)
   (- (/ (1+ rtrn)
@@ -102,3 +107,5 @@
       (+ (car cashflow)
          (* (dfactor rate)
             (npv (cdr cashflow) rate)))))
+
+;;EOF
