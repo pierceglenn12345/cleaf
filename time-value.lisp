@@ -1,6 +1,6 @@
 ;;;; time-value.lisp
 
-(in-package #:trading-core)
+(in-package #:time-value)
 
 (declaim (optimize (speed 0) (safety 3)))
 
