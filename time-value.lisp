@@ -38,7 +38,13 @@
 	   ;; These are fv annuity equations
 	   (fva  (per int pmt) (* pmt (/ (- (expt (1+ int) per) 1) int)))
 	   (naf  (int pmt fut) (/ (log (1+ (/ (* fut int) pmt))) (log (1+ int))))
-	   ;;iap - figure out how to find interest
+	   (iap  (per pmt fut) (let ((i 0.001))
+				 (labels ((recur ()
+						    (cond
+						      ((< (- fut (fva per i pmt)) 0) (rund i 5))
+						      ((> fut (pva per i pmt)) (progn (setf i (+ i .001)) (recur)))
+						      (t nil))))
+					   (recur))))
 	   (pmtf (per int fut) (/ (* fut int)  (- (expt (1+ int) per) 1)))
 
 	   ;; These are fv annuity due equations
