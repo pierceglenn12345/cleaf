@@ -3,6 +3,7 @@
 (in-package #:time-value)
 
 (defun tvm (&key n i pv pmt fv (beg t))
+  "This is a function that will take the correct key arguments to find the target value. the target value can be any of the key value parameter symbols."	
   (declare (optimize (speed 3) (safety 0)))
   (labels (
 	   ;; These are standard tvm equations
