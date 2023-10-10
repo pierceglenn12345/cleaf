@@ -66,7 +66,7 @@
       ((and end n i  pv  (eql target 'pmt)) (pmtp n i  pv))
 
       ;;pvad calls
-      ((and (null end) n i pmt (eql target 'pv) (null end)) (pvad n i pmt))
+      ((and (null end) n i pmt (eql target 'pv)) (pvad n i pmt))
 
       ;;fva calls 
       ((and end n i   pmt (eql target 'fv))  (fva  n i   pmt))
