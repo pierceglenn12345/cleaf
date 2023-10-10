@@ -77,7 +77,7 @@
       ;;fva calls 
       ((and end n i   pmt (eql target 'fv))  (fva  n i   pmt))
       ((and end i pmt fv  (eql target 'n))   (naf  i pmt fv))
-      ((and end n fv  pmt (eql target 'i))   nil) ;;iap - figure out how to find interest
+      ((and end n fv  pmt (eql target 'i))   (iap  n pmt fv))
       ((and end n i   fv  (eql target 'pmt)) (pmtf n i   fv))
 
       ;;fvad calls
